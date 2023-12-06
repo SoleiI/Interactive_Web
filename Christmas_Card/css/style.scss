@@ -1,0 +1,115 @@
+body {
+  overflow: hidden;
+}
+
+section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  perspective: 800px;
+
+  .front {
+    position: relative;
+    width: 375px;
+    height: 250px;
+    transform-origin: bottom center;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+
+    .background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url(../images/background.png) center top / 100% no-repeat;
+    }
+
+    .cloud1 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url(../images/cloud1.png) center top / 100% no-repeat;
+      transform: translateZ(30px);
+    }
+
+    .mountain1 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url(../images/mountain1.png) center bottom / 100% no-repeat;
+      transform: translateZ(30px);
+    }
+
+    .cloud2 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url(../images/cloud2.png) center top / 100% no-repeat;
+      transform: translateZ(40px);
+    }
+
+    .mountain2 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url(../images/mountain2.png) center bottom / 100% no-repeat;
+      transform: translateZ(40px);
+    }
+
+    .trees1 {
+      position: absolute;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: url(../images/trees1.png) center bottom / 100% no-repeat;
+      transform: translateZ(50px);
+    }
+
+    .trees2 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url(../images/trees2.png) center bottom / 100% no-repeat;
+      transform: translateZ(55px);
+    }
+
+    .snow1 {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: url(../images/snow.png) center center / 100% no-repeat;
+      transform: translateZ(60px);
+    }
+
+    .trees3 {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 110%;
+      height: 100%;
+      background: url(../images/trees3.png) center bottom / 100% no-repeat;
+      transform: translate3d(-50%, 0, 65px);
+    }
+
+    .santa {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 40%;
+      height: 40%;
+      background: url(../images/santa.png) center center / 100% no-repeat;
+      transform: translate3d(-70%, 50%, 80px);
+    }
+
+    .snow2 {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: url(../images/snow.gif) center center / 100% no-repeat;
+      transform: translateZ(90px);
+    }
+  }
+}
