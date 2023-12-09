@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Ephesis&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap");
 body {
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   background-color: #506498;
 }
@@ -15,77 +17,76 @@ section {
 }
 section .front {
   position: relative;
-  width: 375px;
-  height: 250px;
-  transform: rotateX(-10deg);
+  width: 300px;
+  height: 200px;
+  transform: rotateX(-15deg);
   transform-origin: bottom center;
   transform-style: preserve-3d;
 }
 section .front .background {
   position: absolute;
-  width: 375px;
-  height: 250px;
+  width: 300px;
+  height: 200px;
   background: url(../images/background.png) center top/cover no-repeat;
 }
 section .front .cloud1 {
   position: absolute;
-  width: 375px;
-  height: 250px;
+  width: 300px;
+  height: 200px;
   background: url(../images/cloud1.png) center top/contain no-repeat;
   transform: translateZ(30px);
 }
 section .front .mountain1 {
   position: absolute;
-  width: 375px;
-  height: 250px;
+  width: 300px;
+  height: 200px;
   background: url(../images/mountain1.png) center bottom/contain no-repeat;
   transform: translateZ(30px);
 }
 section .front .cloud2 {
   position: absolute;
-  width: 375px;
-  height: 250px;
+  width: 300px;
+  height: 200px;
   background: url(../images/cloud2.png) center top/contain no-repeat;
   transform: translateZ(50px);
 }
 section .front .mountain2 {
   position: absolute;
-  width: 375px;
-  height: 250px;
+  width: 300px;
+  height: 200px;
   background: url(../images/mountain2.png) center bottom/contain no-repeat;
   transform: translateZ(50px);
 }
 section .front .trees1 {
   position: absolute;
   right: 0;
-  width: 375px;
-  height: 250px;
+  width: 300px;
+  height: 200px;
   background: url(../images/trees1.png) center bottom/contain no-repeat;
   transform: translateZ(70px);
 }
 section .front .trees2 {
   position: absolute;
-  width: 375px;
-  height: 250px;
+  width: 300px;
+  height: 200px;
   background: url(../images/trees2.png) center bottom/contain no-repeat;
   transform: translateZ(90px);
 }
 section .front .snow1 {
   position: absolute;
   top: 0;
-  width: 375px;
-  height: 250px;
+  width: 300px;
+  height: 200px;
   background: url(../images/snow.png) center center/contain no-repeat;
   transform: translateZ(75px);
 }
 section .front .trees3 {
   position: absolute;
   top: 0;
-  left: 50%;
-  width: 375px;
-  height: 250px;
-  background: url(../images/trees3.png) center bottom/contain no-repeat;
-  transform: translate3d(-50%, 0, 100px);
+  width: 300px;
+  height: 200px;
+  background: url(../images/trees3-1.png) center bottom/contain no-repeat;
+  transform: translateZ(100px);
 }
 section .front .santa {
   position: absolute;
@@ -99,51 +100,40 @@ section .front .santa {
 section .front .snow2 {
   position: absolute;
   top: 0;
-  width: 375px;
-  height: 250px;
+  width: 300px;
+  height: 200px;
   background: url(../images/snow.gif) center center/contain no-repeat;
   transform: translateZ(110px);
 }
 section .back {
   position: relative;
-  width: 375px;
+  width: 300px;
   height: 250px;
   background: linear-gradient(180deg, #fff, #f6f1f4);
-  transform: rotateX(80deg);
+  transform: rotateX(75deg);
   transform-origin: top center;
   transform-style: preserve-3d;
   perspective: 1000px;
   font-family: "Ephesis", "Noto Serif KR", serif, cursive;
 }
-section .back p {
+section .back .msg {
   position: absolute;
-  font-size: 4rem;
-  font-weight: bold;
-  width: 100%;
-  height: 100%;
-  margin: auto;
-  color: #c60533;
-  transform: translateZ(2px);
-}
-section .back p .msg1 {
-  position: absolute;
-  top: 110px;
+  margin-top: 3rem;
+  background: url(../images/msg.png) center center/100% no-repeat;
+  width: 50%;
+  height: 50%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-42%);
-}
-section .back p .msg2 {
-  position: absolute;
-  top: 150px;
-  left: 50%;
-  transform: translate(-50%, 5px);
+  transform: translate3d(-50%, -50%, 2px);
+  filter: drop-shadow(2px 2px 3px #999);
 }
 section .back h3 {
   position: absolute;
   text-align: right;
   right: 0;
   bottom: 0;
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   font-weight: 600;
   transform-origin: bottom;
-  transform: translate3d(-20px, 0px, 2px);
+  transform: translate3d(-20px, -5px, 2px);
 }
