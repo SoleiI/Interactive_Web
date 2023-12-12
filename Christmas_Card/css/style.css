@@ -17,74 +17,80 @@ section {
 }
 section .front {
   position: relative;
-  width: 270px;
-  height: 180px;
+  width: 375px;
+  height: 250px;
   transform: rotateX(-15deg);
   transform-origin: bottom center;
   transform-style: preserve-3d;
 }
+@media screen and (max-width: 768px) {
+  section .front {
+    width: 270px;
+    height: 180px;
+  }
+}
 section .front .background {
   position: absolute;
-  width: 270px;
-  height: 180px;
+  width: inherit;
+  height: inherit;
   background: url(../images/background.png) center top/cover no-repeat;
 }
 section .front .cloud1 {
   position: absolute;
-  width: 270px;
-  height: 180px;
+  width: inherit;
+  height: inherit;
   background: url(../images/cloud1.png) center top/contain no-repeat;
   transform: translateZ(30px);
 }
 section .front .mountain1 {
   position: absolute;
-  width: 270px;
-  height: 180px;
+  width: inherit;
+  height: inherit;
   background: url(../images/mountain1.png) center bottom/contain no-repeat;
   transform: translateZ(30px);
 }
 section .front .cloud2 {
   position: absolute;
-  width: 270px;
-  height: 180px;
+  width: inherit;
+  height: inherit;
   background: url(../images/cloud2.png) center top/contain no-repeat;
   transform: translateZ(50px);
 }
 section .front .mountain2 {
   position: absolute;
-  width: 270px;
-  height: 180px;
+  width: inherit;
+  height: inherit;
   background: url(../images/mountain2.png) center bottom/contain no-repeat;
   transform: translateZ(50px);
 }
 section .front .trees1 {
   position: absolute;
   right: 0;
-  width: 270px;
-  height: 180px;
+  width: inherit;
+  height: inherit;
   background: url(../images/trees1.png) center bottom/contain no-repeat;
   transform: translateZ(70px);
 }
 section .front .trees2 {
   position: absolute;
-  width: 270px;
-  height: 180px;
+  width: inherit;
+  height: inherit;
   background: url(../images/trees2.png) center bottom/contain no-repeat;
   transform: translateZ(90px);
 }
 section .front .snow1 {
   position: absolute;
   top: 0;
-  width: 270px;
-  height: 180px;
+  width: inherit;
+  height: inherit;
   background: url(../images/snow.png) center center/contain no-repeat;
   transform: translateZ(75px);
 }
 section .front .trees3 {
   position: absolute;
   top: 0;
-  width: 270px;
-  height: 180px;
+  width: inherit;
+  height: inherit;
   background: url(../images/trees3-1.png) center bottom/contain no-repeat;
   transform: translateZ(100px);
 }
@@ -100,21 +106,27 @@ section .front .santa {
 section .front .snow2 {
   position: absolute;
   top: 0;
-  width: 270px;
-  height: 180px;
+  width: inherit;
+  height: inherit;
   background: url(../images/snow.gif) center center/contain no-repeat;
   transform: translateZ(110px);
 }
 section .back {
   position: relative;
-  width: 270px;
-  height: 230px;
+  width: 375px;
+  height: 300px;
   background: linear-gradient(180deg, #fff, #f6f1f4);
   transform: rotateX(75deg);
   transform-origin: top center;
   transform-style: preserve-3d;
   perspective: 1000px;
   font-family: "Ephesis", "Noto Serif KR", serif, cursive;
+}
+@media screen and (max-width: 768px) {
+  section .back {
+    width: 270px;
+    height: 220px;
+  }
 }
 section .back .msg {
   position: absolute;
@@ -126,6 +138,12 @@ section .back .msg {
   left: 50%;
   transform: translate3d(-50%, -50%, 2px);
   filter: drop-shadow(2px 2px 3px #999);
+}
+@media screen and (max-width: 768px) {
+  section .back .msg {
+    width: 45%;
+    height: 45%;
+  }
 }
 section .back h3 {
   position: absolute;
