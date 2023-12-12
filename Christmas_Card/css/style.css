@@ -17,74 +17,74 @@ section {
 }
 section .front {
   position: relative;
-  width: 300px;
-  height: 200px;
+  width: 270px;
+  height: 180px;
   transform: rotateX(-15deg);
   transform-origin: bottom center;
   transform-style: preserve-3d;
 }
 section .front .background {
   position: absolute;
-  width: 300px;
-  height: 200px;
+  width: 270px;
+  height: 180px;
   background: url(../images/background.png) center top/cover no-repeat;
 }
 section .front .cloud1 {
   position: absolute;
-  width: 300px;
-  height: 200px;
+  width: 270px;
+  height: 180px;
   background: url(../images/cloud1.png) center top/contain no-repeat;
   transform: translateZ(30px);
 }
 section .front .mountain1 {
   position: absolute;
-  width: 300px;
-  height: 200px;
+  width: 270px;
+  height: 180px;
   background: url(../images/mountain1.png) center bottom/contain no-repeat;
   transform: translateZ(30px);
 }
 section .front .cloud2 {
   position: absolute;
-  width: 300px;
-  height: 200px;
+  width: 270px;
+  height: 180px;
   background: url(../images/cloud2.png) center top/contain no-repeat;
   transform: translateZ(50px);
 }
 section .front .mountain2 {
   position: absolute;
-  width: 300px;
-  height: 200px;
+  width: 270px;
+  height: 180px;
   background: url(../images/mountain2.png) center bottom/contain no-repeat;
   transform: translateZ(50px);
 }
 section .front .trees1 {
   position: absolute;
   right: 0;
-  width: 300px;
-  height: 200px;
+  width: 270px;
+  height: 180px;
   background: url(../images/trees1.png) center bottom/contain no-repeat;
   transform: translateZ(70px);
 }
 section .front .trees2 {
   position: absolute;
-  width: 300px;
-  height: 200px;
+  width: 270px;
+  height: 180px;
   background: url(../images/trees2.png) center bottom/contain no-repeat;
   transform: translateZ(90px);
 }
 section .front .snow1 {
   position: absolute;
   top: 0;
-  width: 300px;
-  height: 200px;
+  width: 270px;
+  height: 180px;
   background: url(../images/snow.png) center center/contain no-repeat;
   transform: translateZ(75px);
 }
 section .front .trees3 {
   position: absolute;
   top: 0;
-  width: 300px;
-  height: 200px;
+  width: 270px;
+  height: 180px;
   background: url(../images/trees3-1.png) center bottom/contain no-repeat;
   transform: translateZ(100px);
 }
@@ -100,15 +100,15 @@ section .front .santa {
 section .front .snow2 {
   position: absolute;
   top: 0;
-  width: 300px;
-  height: 200px;
+  width: 270px;
+  height: 180px;
   background: url(../images/snow.gif) center center/contain no-repeat;
   transform: translateZ(110px);
 }
 section .back {
   position: relative;
-  width: 300px;
-  height: 250px;
+  width: 270px;
+  height: 230px;
   background: linear-gradient(180deg, #fff, #f6f1f4);
   transform: rotateX(75deg);
   transform-origin: top center;

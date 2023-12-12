@@ -5,10 +5,17 @@
   font-family: 'Ephesis', 'Noto Serif KR', serif, cursive;
 }
 
-$mobile: 'only screen and (max-width: 800px)';
+$card-width: 375px;
+$card-height: 250px;
 
-$card-width: 300px; // 375px
-$card-height: 200px; // 250px
+@mixin mobile {
+  @media (max-width: 768px) {
+    $card-width: 270px !global;
+    $card-height: 180px !global;
+  }
+}
+
+@include mobile;
 
 body {
   width: 100vw;
