@@ -5,10 +5,10 @@
   font-family: 'Ephesis', 'Noto Serif KR', serif, cursive;
 }
 
-$mobile: 'only screen and (max-width: 800px)';
-
-$card-width: 300px; // 375px
-$card-height: 200px; // 250px
+$card-width: 375px;
+$card-height: 250px;
+$card-width-mobile: 270px;
+$card-height-mobile: 180px;
 
 body {
   width: 100vw;
@@ -33,41 +33,46 @@ section {
     transform-origin: bottom center;
     transform-style: preserve-3d;
 
+    @media screen and (max-width: 768px) {
+      width: $card-width-mobile;
+      height: $card-height-mobile;
+    }
+
     .background {
       position: absolute;
-      width: $card-width;
-      height: $card-height;
+      width: inherit;
+      height: inherit;
       background: url(../images/background.png) center top / cover no-repeat;
     }
 
     .cloud1 {
       position: absolute;
-      width: $card-width;
-      height: $card-height;
+      width: inherit;
+      height: inherit;
       background: url(../images/cloud1.png) center top / contain no-repeat;
       transform: translateZ(30px);
     }
 
     .mountain1 {
       position: absolute;
-      width: $card-width;
-      height: $card-height;
+      width: inherit;
+      height: inherit;
       background: url(../images/mountain1.png) center bottom / contain no-repeat;
       transform: translateZ(30px);
     }
 
     .cloud2 {
       position: absolute;
-      width: $card-width;
-      height: $card-height;
+      width: inherit;
+      height: inherit;
       background: url(../images/cloud2.png) center top / contain no-repeat;
       transform: translateZ(50px);
     }
 
     .mountain2 {
       position: absolute;
-      width: $card-width;
-      height: $card-height;
+      width: inherit;
+      height: inherit;
       background: url(../images/mountain2.png) center bottom / contain no-repeat;
       transform: translateZ(50px);
     }
@@ -75,16 +80,16 @@ section {
     .trees1 {
       position: absolute;
       right: 0;
-      width: $card-width;
-      height: $card-height;
+      width: inherit;
+      height: inherit;
       background: url(../images/trees1.png) center bottom / contain no-repeat;
       transform: translateZ(70px);
     }
 
     .trees2 {
       position: absolute;
-      width: $card-width;
-      height: $card-height;
+      width: inherit;
+      height: inherit;
       background: url(../images/trees2.png) center bottom / contain no-repeat;
       transform: translateZ(90px);
     }
@@ -92,8 +97,8 @@ section {
     .snow1 {
       position: absolute;
       top: 0;
-      width: $card-width;
-      height: $card-height;
+      width: inherit;
+      height: inherit;
       background: url(../images/snow.png) center center / contain no-repeat;
       transform: translateZ(75px);
     }
@@ -101,8 +106,8 @@ section {
     .trees3 {
       position: absolute;
       top: 0;
-      width: $card-width;
-      height: $card-height;
+      width: inherit;
+      height: inherit;
       background: url(../images/trees3-1.png) center bottom / contain no-repeat;
       transform: translateZ(100px);
     }
@@ -120,8 +125,8 @@ section {
     .snow2 {
       position: absolute;
       top: 0;
-      width: $card-width;
-      height: $card-height;
+      width: inherit;
+      height: inherit;
       background: url(../images/snow.gif) center center / contain no-repeat;
       transform: translateZ(110px);
     }
@@ -140,6 +145,11 @@ section {
     perspective: 1000px;
     @include fontAdd();
 
+    @media screen and (max-width: 768px) {
+      width: $card-width-mobile;
+      height: $card-height-mobile + 40px;
+    }
+
     .msg {
       position: absolute;
       margin-top: 3rem;
@@ -150,6 +160,11 @@ section {
       left: 50%;
       transform: translate3d(-50%, -50%, 2px);
       filter: drop-shadow(2px 2px 3px #999);
+
+      @media screen and (max-width: 768px) {
+        width: 45%;
+        height: 45%;
+      }
     }
 
     h3 {
