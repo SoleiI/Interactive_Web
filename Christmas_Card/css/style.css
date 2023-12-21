@@ -7,6 +7,10 @@ body {
   background-color: #09122b;
 }
 
+iframe {
+  visibility: hidden;
+}
+
 section {
   position: absolute;
   top: 50%;
