@@ -1,4 +1,5 @@
 const card = document.querySelector('section');
+const msg2 = document.querySelector('h3');
 let x = 0,
   y = 0;
 let targetX = 0,
@@ -8,6 +9,8 @@ let isMobile = false;
 let isIos = false;
 
 window.onload = () => {
+  writeMessage();
+
   isMobile = checkMobile();
   isIos = checkIos();
 
@@ -21,6 +24,11 @@ window.onload = () => {
         .catch(console.error);
     else handleDeviceOrientation();
   }
+};
+
+const writeMessage = () => {
+  gsap.fromTo('.msg', { autoAlpha: 0 }, { autoAlpha: 1, duration: 5 });
+  gsap.fromTo('h3', { autoAlpha: 0 }, { autoAlpha: 1, duration: 3, delay: 2 });
 };
 
 /* 부드러운 효과 */
