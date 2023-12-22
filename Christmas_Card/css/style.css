@@ -6,7 +6,68 @@ body {
   background-color: #09122b;
 }
 body form {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(180deg, #fff, #f6f1f4);
+  width: 375px;
+  height: 250px;
   font-family: "Noto Serif KR", serif, cursive;
+}
+@media screen and (max-width: 768px) {
+  body form {
+    width: 270px;
+    height: 180px;
+    font-size: 0.8rem;
+  }
+}
+body form .letterTo {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 30px;
+}
+body form .letterTo div {
+  display: flex;
+  align-items: center;
+}
+body form .letterTo div input {
+  padding-left: 15px;
+  border: solid #ccc;
+  outline: none;
+  height: 2rem;
+}
+body form .letterTo div p {
+  margin-left: 10px;
+}
+body form .formTxt {
+  margin-top: 0;
+  padding-top: 0;
+  text-align: center;
+}
+body form .tip {
+  text-align: center;
+  color: #164c03;
+  font-size: 0.7rem;
+}
+@media screen and (max-width: 768px) {
+  body form .tip {
+    font-size: 0.55rem;
+  }
+}
+body form button {
+  cursor: pointer;
+  background-color: rgba(203, 225, 245, 0.6549019608);
+  padding: 10px;
 }
 body header .copyright {
   position: absolute;
@@ -26,6 +87,7 @@ body header iframe {
   visibility: hidden;
 }
 body section {
+  display: none;
   visibility: hidden;
   position: absolute;
   top: 50%;
