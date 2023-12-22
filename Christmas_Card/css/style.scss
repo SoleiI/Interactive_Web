@@ -17,8 +17,26 @@ body {
   background-color: #09122b;
 }
 
-iframe {
-  visibility: hidden;
+header {
+  .copyright {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    top: 1rem;
+    left: 1rem;
+    font-size: 0.8rem;
+    color: rgb(226, 226, 226);
+
+    .material-symbols-outlined {
+      font-size: 0.9rem;
+      margin-right: 0.2rem;
+    }
+  }
+
+  iframe {
+    visibility: hidden;
+  }
 }
 
 section {
