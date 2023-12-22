@@ -16,7 +16,73 @@ body {
   background-color: #09122b;
 
   form {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(180deg, #fff, #f6f1f4);
+    width: $card-width;
+    height: $card-height;
     @include fontAdd();
+
+    @media screen and (max-width: 768px) {
+      width: $card-width-mobile;
+      height: $card-height-mobile;
+      font-size: 0.8rem;
+    }
+
+    .letterTo {
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      width: 100%;
+      padding-top: 30px;
+
+      div {
+        display: flex;
+        align-items: center;
+
+        input {
+          padding-left: 15px;
+          border: solid #ccc;
+          outline: none;
+          height: 2rem;
+        }
+
+        p {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .formTxt {
+      margin-top: 0;
+      padding-top: 0;
+      text-align: center;
+    }
+
+    .tip {
+      text-align: center;
+      color: #164c03;
+      font-size: 0.7rem;
+
+      @media screen and (max-width: 768px) {
+        font-size: 0.55rem;
+      }
+    }
+
+    button {
+      cursor: pointer;
+      background-color: #cbe1f5a7;
+      padding: 10px;
+    }
   }
 
   header {
@@ -42,6 +108,7 @@ body {
   }
 
   section {
+    display: none;
     visibility: hidden;
     position: absolute;
     top: 50%;
