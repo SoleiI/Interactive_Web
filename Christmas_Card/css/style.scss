@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
 
 @mixin fontAdd() {
-  font-family: 'Ephesis', 'Noto Serif KR', serif, cursive;
+  font-family: 'Noto Serif KR', serif, cursive;
 }
 
 $card-width: 375px;
@@ -15,189 +14,226 @@ body {
   height: 100vh;
   overflow: hidden;
   background-color: #09122b;
-}
 
-header {
-  .copyright {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    margin: 0;
-    top: 1rem;
-    left: 1rem;
-    font-size: 0.8rem;
-    color: rgb(226, 226, 226);
-
-    .material-symbols-outlined {
-      font-size: 0.9rem;
-      margin-right: 0.2rem;
-    }
-  }
-
-  iframe {
-    visibility: hidden;
-  }
-}
-
-section {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transform-style: preserve-3d;
-  perspective: 800px;
-
-  .front {
-    position: relative;
-    width: $card-width;
-    height: $card-height;
-    transform: rotateX(-15deg);
-    transform-origin: bottom center;
-    transform-style: preserve-3d;
-
-    @media screen and (max-width: 768px) {
-      width: $card-width-mobile;
-      height: $card-height-mobile;
-    }
-
-    .background {
-      position: absolute;
-      width: inherit;
-      height: inherit;
-      background: url(../images/background.png) center top / cover no-repeat;
-    }
-
-    .cloud1 {
-      position: absolute;
-      width: inherit;
-      height: inherit;
-      background: url(../images/cloud1.png) center top / contain no-repeat;
-      transform: translateZ(30px);
-    }
-
-    .mountain1 {
-      position: absolute;
-      width: inherit;
-      height: inherit;
-      background: url(../images/mountain1.png) center bottom / contain no-repeat;
-      transform: translateZ(30px);
-    }
-
-    .cloud2 {
-      position: absolute;
-      width: inherit;
-      height: inherit;
-      background: url(../images/cloud2.png) center top / contain no-repeat;
-      transform: translateZ(50px);
-    }
-
-    .mountain2 {
-      position: absolute;
-      width: inherit;
-      height: inherit;
-      background: url(../images/mountain2.png) center bottom / contain no-repeat;
-      transform: translateZ(50px);
-    }
-
-    .trees1 {
-      position: absolute;
-      right: 0;
-      width: inherit;
-      height: inherit;
-      background: url(../images/trees1.png) center bottom / contain no-repeat;
-      transform: translateZ(70px);
-    }
-
-    .trees2 {
-      position: absolute;
-      width: inherit;
-      height: inherit;
-      background: url(../images/trees2.png) center bottom / contain no-repeat;
-      transform: translateZ(90px);
-    }
-
-    .snow1 {
-      position: absolute;
-      top: 0;
-      width: inherit;
-      height: inherit;
-      background: url(../images/snow.png) center center / contain no-repeat;
-      transform: translateZ(75px);
-    }
-
-    .trees3 {
-      position: absolute;
-      top: 0;
-      width: inherit;
-      height: inherit;
-      background: url(../images/trees3-1.png) center bottom / contain no-repeat;
-      transform: translateZ(100px);
-    }
-
-    .santa {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 40%;
-      height: 40%;
-      background: url(../images/santa.png) center center / contain no-repeat;
-      transform: translate3d(-70%, 50%, 80px);
-    }
-
-    .snow2 {
-      position: absolute;
-      top: 0;
-      width: inherit;
-      height: inherit;
-      background: url(../images/snow.gif) center center / contain no-repeat;
-      transform: translateZ(110px);
-    }
-  }
-
-  .back {
-    position: relative;
-    width: $card-width;
-    height: $card-height + 50px;
-    background: linear-gradient(180deg, #fff, #f6f1f4);
-
-    transform: rotateX(75deg);
-    transform-origin: top center;
-
-    transform-style: preserve-3d;
-    perspective: 1000px;
+  form {
     @include fontAdd();
+  }
 
-    @media screen and (max-width: 768px) {
-      width: $card-width-mobile;
-      height: $card-height-mobile + 40px;
-    }
-
-    .msg {
+  header {
+    .copyright {
       position: absolute;
-      margin-top: 3rem;
-      background: url(../images/msg.png) center center / 100% no-repeat;
-      width: 50%;
-      height: 50%;
-      top: 50%;
-      left: 50%;
-      transform: translate3d(-50%, -50%, 2px);
-      filter: drop-shadow(2px 2px 3px #999);
+      display: flex;
+      align-items: center;
+      margin: 0;
+      top: 1rem;
+      left: 1rem;
+      font-size: 0.8rem;
+      color: #cccccc;
 
-      @media screen and (max-width: 768px) {
-        width: 45%;
-        height: 45%;
+      .material-symbols-outlined {
+        font-size: 0.9rem;
+        margin-right: 0.2rem;
       }
     }
 
-    h3 {
-      position: absolute;
-      text-align: right;
-      right: 0;
-      bottom: 0;
-      font-size: 0.5rem;
-      font-weight: 600;
-      transform-origin: bottom;
-      transform: translate3d(-20px, -5px, 2px);
+    iframe {
+      visibility: hidden;
+    }
+  }
+
+  section {
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+    perspective: 800px;
+
+    .front {
+      position: relative;
+      width: $card-width;
+      height: $card-height;
+      transform: rotateX(-15deg);
+      // transform: rotateX(-90deg);
+      transform-origin: bottom center;
+      transform-style: preserve-3d;
+
+      @media screen and (max-width: 768px) {
+        width: $card-width-mobile;
+        height: $card-height-mobile;
+      }
+
+      .background {
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        background: url(../images/background.png) center top / cover no-repeat;
+      }
+
+      .cloud1 {
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        background: url(../images/cloud1.png) center top / contain no-repeat;
+        transform: translateZ(30px);
+      }
+
+      .mountain1 {
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        background: url(../images/mountain1.png) center bottom / contain
+          no-repeat;
+        transform: translateZ(30px);
+      }
+
+      .cloud2 {
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        background: url(../images/cloud2.png) center top / contain no-repeat;
+        transform: translateZ(50px);
+      }
+
+      .mountain2 {
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        background: url(../images/mountain2.png) center bottom / contain
+          no-repeat;
+        transform: translateZ(50px);
+      }
+
+      .trees1 {
+        position: absolute;
+        right: 0;
+        width: inherit;
+        height: inherit;
+        background: url(../images/trees1.png) center bottom / contain no-repeat;
+        transform: translateZ(70px);
+      }
+
+      .trees2 {
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        background: url(../images/trees2.png) center bottom / contain no-repeat;
+        transform: translateZ(90px);
+      }
+
+      .snow1 {
+        position: absolute;
+        top: 0;
+        width: inherit;
+        height: inherit;
+        background: url(../images/snow.png) center center / contain no-repeat;
+        transform: translateZ(75px);
+      }
+
+      .trees3 {
+        position: absolute;
+        top: 0;
+        width: inherit;
+        height: inherit;
+        background: url(../images/trees3-1.png) center bottom / contain
+          no-repeat;
+        transform: translateZ(100px);
+      }
+
+      .santa {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 40%;
+        height: 40%;
+        background: url(../images/santa.png) center center / contain no-repeat;
+        transform: translate3d(-70%, 50%, 80px);
+      }
+
+      .snow2 {
+        position: absolute;
+        top: 0;
+        width: inherit;
+        height: inherit;
+        background: url(../images/snow.gif) center center / contain no-repeat;
+        transform: translateZ(110px);
+      }
+    }
+
+    .back {
+      position: relative;
+      width: $card-width;
+      height: $card-height + 50px;
+      background: linear-gradient(180deg, #fff, #f6f1f4);
+
+      transform: rotateX(75deg);
+      // transform: rotateX(90deg);
+      transform-origin: top center;
+
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      @include fontAdd();
+
+      @media screen and (max-width: 768px) {
+        width: $card-width-mobile;
+        height: $card-height-mobile + 40px;
+      }
+
+      .txtmsg {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        width: 80%;
+        top: 65%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 2px);
+        text-align: center;
+        font-size: 0.7rem;
+
+        @media screen and (max-width: 768px) {
+          margin-top: 0.5rem;
+          font-size: 0.5rem;
+        }
+
+        span {
+          opacity: 0;
+          margin: 0.2rem 0;
+        }
+      }
+
+      .msg {
+        opacity: 0;
+        position: absolute;
+        margin-top: 3rem;
+        background: url(../images/msg.png) center center / 100% no-repeat;
+        width: 50%;
+        height: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 2px);
+        filter: drop-shadow(2px 2px 3px #999);
+
+        @media screen and (max-width: 768px) {
+          width: 45%;
+          height: 45%;
+        }
+      }
+
+      h3 {
+        opacity: 0;
+        position: absolute;
+        text-align: right;
+        right: 0;
+        bottom: 0;
+        font-size: 0.5rem;
+        font-weight: 600;
+        transform-origin: bottom;
+        transform: translate3d(-20px, -5px, 2px);
+      }
     }
   }
 }

@@ -1,5 +1,6 @@
 const card = document.querySelector('section');
-const msg2 = document.querySelector('h3');
+const txtmsg = document.querySelector('.txtmsg');
+const txts = txtmsg.querySelectorAll('span');
 let x = 0,
   y = 0;
 let targetX = 0,
@@ -9,26 +10,37 @@ let isMobile = false;
 let isIos = false;
 
 window.onload = () => {
-  writeMessage();
-
   isMobile = checkMobile();
   isIos = checkIos();
 
-  /* PC : mousemove */
-  if (!isMobile) handleMouseMove();
-  else {
-    /* Mobile : deviceorientation */
-    if (isIos)
-      DeviceOrientationEvent.requestPermission()
-        .then(() => handleDeviceOrientation())
-        .catch(console.error);
-    else handleDeviceOrientation();
-  }
+  openCard();
+  setTimeout(() => {
+    writeMessage();
+    /* PC : mousemove */
+    if (!isMobile) handleMouseMove();
+    else {
+      /* Mobile : deviceorientation */
+      if (isIos)
+        DeviceOrientationEvent.requestPermission()
+          .then(() => handleDeviceOrientation())
+          .catch(console.error);
+      else handleDeviceOrientation();
+    }
+  }, 1000);
+};
+
+const openCard = () => {
+  card.style.visibility = 'visible';
 };
 
 const writeMessage = () => {
-  gsap.fromTo('.msg', { autoAlpha: 0 }, { autoAlpha: 1, duration: 5 });
-  gsap.fromTo('h3', { autoAlpha: 0 }, { autoAlpha: 1, duration: 3, delay: 2 });
+  txts.forEach((txt, i) => {
+    console.log(txt);
+    gsap.to(txt, { autoAlpha: 1, duration: 3, delay: i * 1.5 });
+  });
+  gsap.to('.txtmsg', { autoAlpha: 0, delay: 5.5 });
+  gsap.to('.msg', { autoAlpha: 1, duration: 5, delay: 6 });
+  gsap.to('h3', { autoAlpha: 1, duration: 3, delay: 7.5 });
 };
 
 /* 부드러운 효과 */
