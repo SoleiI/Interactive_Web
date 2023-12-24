@@ -18,6 +18,14 @@ window.onload = () => {
   isMobile = checkMobile();
   isIos = checkIos();
   const check = typeof DeviceOrientationEvent.requestPermission === 'function';
+  if (isIos && check) {
+    window.DeviceOrientationEvent.requestPermission().catch(console.error());
+  }
+
+  if (isIos)
+    alert(
+      '일부 ios 기기에서 bgm과 장치 모션 기능이 동작하지 않는 버그가 있습니다. 전체적으로는 크게 문제가 되지 않으나, 원활한 동작을 원하시면 pc 환경에서 실행해주시기 바랍니다.'
+    );
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -33,13 +41,7 @@ window.onload = () => {
         if (!isMobile) handleMouseMove();
         else {
           /* Mobile : deviceorientation */
-          if (isIos && check) {
-            window.DeviceOrientationEvent.requestPermission()
-              .then((state) => {
-                if (state === 'granted') handleDeviceOrientation();
-              })
-              .catch(alert('권한을 허용해주세요.'));
-          } else handleDeviceOrientation();
+          handleDeviceOrientation();
         }
       }, 10000);
     }
@@ -111,10 +113,14 @@ const handleMouseMove = () => {
 };
 
 const handleDeviceOrientation = () => {
-  window.addEventListener('deviceorientation', (e) => {
-    x = e.gamma;
-    y = e.beta;
-  });
+  window.addEventListener(
+    'deviceorientation',
+    (e) => {
+      x = e.gamma;
+      y = e.beta;
+    },
+    true
+  );
   loop();
 };
 
