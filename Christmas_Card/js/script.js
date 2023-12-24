@@ -97,7 +97,7 @@ const loop = () => {
   targetY += (y - targetY) * speed;
 
   card.style.transform = `translate3d(-50%, -50%, 0) rotateX(${
-    isMobile ? (targetY - 80) / 7 : targetY / 10
+    isMobile ? (targetY - 75) / 10 : targetY / 10
   }deg) rotateY(${isMobile ? targetX : -targetX / 10}deg)`;
 
   window.requestAnimationFrame(loop);
