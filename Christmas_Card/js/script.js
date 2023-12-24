@@ -62,13 +62,13 @@ const openCard = () => {
   gsap.to('form', { autoAlpha: 0, duration: 1, delay: 2 });
   gsap.to('section', { autoAlpha: 1, duration: 1, delay: 2 });
   gsap.to('.front', {
-    rotationX: -30,
+    rotationX: -35,
     duration: 4,
     delay: 2,
     ease: Power1.easeIn,
   });
   gsap.to('.back', {
-    rotationX: 60,
+    rotationX: 55,
     duration: 4,
     delay: 2,
     ease: Power1.easeIn,
