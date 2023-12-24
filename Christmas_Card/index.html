@@ -13,7 +13,9 @@
 
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
-    <script src="script.js" defer></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/youtube.js" defer></script>
   </head>
   <body>
     <!-- form -->
@@ -36,19 +38,16 @@
 
     <!-- background music -->
     <header>
+      <button class="bgm_btn">
+        <span class="material-symbols-outlined"> music_note </span>
+        <span class="bgm_txt">ON</span>
+      </button>
       <p class="copyright">
-        <span class="material-symbols-outlined"> music_note </span> We Wish You
-        A Merry Christmas - PUYO Music Box
+        <span class="cr_txt"
+          >We Wish You A Merry Christmas - PUYO Music Box
+        </span>
       </p>
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/PjudGQXDbyk?si=yA4zezxvefYvFbOI?mute=0&loop=1&playlist=PjudGQXDbyk"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
+      <div id="player"></div>
     </header>
 
     <!-- card -->
