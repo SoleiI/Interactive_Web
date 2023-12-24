@@ -1,9 +1,11 @@
 const form = document.querySelector('form');
+
 const card = document.querySelector('section');
 const front = document.querySelector('.front');
 const frontImgs = front.querySelectorAll('div');
 const txtmsg = document.querySelector('.txtmsg');
 const txts = txtmsg.querySelectorAll('span');
+
 let x = 0,
   y = 0;
 let targetX = 0,
@@ -73,12 +75,6 @@ const openCard = () => {
     });
   });
 };
-
-/**
- * TODO
- * bgm 버튼 구현 + 깜빡거리기 효과
- * bgm 텍스트 슬라이드 효과
- */
 
 /* 텍스트 애니메이션 */
 const writeMessage = () => {

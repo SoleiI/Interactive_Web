@@ -7,6 +7,8 @@ body {
 }
 body form {
   box-sizing: border-box;
+  width: 375px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,8 +17,10 @@ body form {
   left: 50%;
   transform: translate(-50%, -50%);
   background: linear-gradient(180deg, #fff, #f6f1f4);
-  width: 375px;
-  height: 250px;
+  z-index: 1000;
+  box-shadow: 0px 10px 20px 0px rgba(120, 120, 120, 0.8);
+  -webkit-box-shadow: 1px 10px 20px 0px rgba(120, 120, 120, 0.8);
+  -moz-box-shadow: 0px 10px 20px 0px rgba(120, 120, 120, 0.8);
   font-family: "Noto Serif KR", serif, cursive;
 }
 @media screen and (max-width: 768px) {
@@ -69,25 +73,62 @@ body form button {
   background-color: rgba(203, 225, 245, 0.6549019608);
   padding: 10px;
 }
-body header .copyright {
-  position: absolute;
+body header {
   display: flex;
+  position: absolute;
+  padding: 1rem;
+  width: 250px;
+  height: 1.2rem;
   align-items: center;
-  margin: 0;
-  top: 1rem;
-  left: 1rem;
-  font-size: 0.8rem;
-  color: #cccccc;
+  z-index: 1000;
 }
-body header .copyright .material-symbols-outlined {
+body header .bgm_btn {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65px;
+  background-color: transparent;
+  color: #ccc;
+  border: solid #ccc;
+  border-radius: 0.6rem;
+}
+body header .bgm_btn .material-symbols-outlined {
+  width: -moz-fit-content;
+  width: fit-content;
   font-size: 0.9rem;
+  margin: 0;
   margin-right: 0.2rem;
 }
-body header iframe {
-  visibility: hidden;
+body header .copyright {
+  opacity: 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  width: 150px;
+  height: 1rem;
+  font-size: 0.8rem;
+  color: #cccccc;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0px 10px;
+  transition: 1s;
+}
+body header .cr_txt {
+  animation: flow_text 15s linear infinite;
+}
+@keyframes flow_text {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-130px);
+  }
+}
+body header #player {
+  display: none;
 }
 body section {
-  display: none;
   visibility: hidden;
   position: absolute;
   top: 50%;
@@ -100,7 +141,7 @@ body section .front {
   position: relative;
   width: 375px;
   height: 250px;
-  transform: rotateX(-15deg);
+  transform: rotateX(-90deg);
   transform-origin: bottom center;
   transform-style: preserve-3d;
 }
@@ -182,7 +223,7 @@ body section .front .santa {
   width: 40%;
   height: 40%;
   background: url(../images/santa.png) center center/contain no-repeat;
-  transform: translate3d(-70%, 50%, 80px);
+  transform: translate(-70%, 50%) translateZ(80px);
 }
 body section .front .snow2 {
   position: absolute;
@@ -197,7 +238,7 @@ body section .back {
   width: 375px;
   height: 300px;
   background: linear-gradient(180deg, #fff, #f6f1f4);
-  transform: rotateX(75deg);
+  transform: rotateX(90deg);
   transform-origin: top center;
   transform-style: preserve-3d;
   perspective: 1000px;
