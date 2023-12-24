@@ -37,13 +37,16 @@ window.onload = () => {
 
       setTimeout(() => {
         writeMessage();
+      }, 10000);
+
+      setTimeout(() => {
         /* PC : mousemove */
         if (!isMobile) handleMouseMove();
         else {
           /* Mobile : deviceorientation */
           handleDeviceOrientation();
         }
-      }, 10000);
+      }, 20000);
     }
   });
 };
