@@ -62,13 +62,13 @@ const openCard = () => {
   gsap.to('form', { autoAlpha: 0, duration: 1, delay: 2 });
   gsap.to('section', { autoAlpha: 1, duration: 1, delay: 2 });
   gsap.to('.front', {
-    rotationX: -35,
+    rotationX: -40,
     duration: 4,
     delay: 2,
     ease: Power1.easeIn,
   });
   gsap.to('.back', {
-    rotationX: 55,
+    rotationX: 50,
     duration: 4,
     delay: 2,
     ease: Power1.easeIn,
@@ -119,7 +119,7 @@ const handleDeviceOrientation = () => {
   window.addEventListener(
     'deviceorientation',
     (e) => {
-      x = e.gamma;
+      x = e.gamma / 2;
       y = e.beta;
     },
     true
