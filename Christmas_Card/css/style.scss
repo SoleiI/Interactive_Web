@@ -90,24 +90,63 @@ body {
   }
 
   header {
-    .copyright {
-      position: absolute;
+    display: flex;
+    position: absolute;
+    padding: 1rem;
+    width: 250px;
+    height: 1.2rem;
+    align-items: center;
+    z-index: 1000;
+
+    .bgm_btn {
+      flex-shrink: 0;
       display: flex;
+      justify-content: center;
       align-items: center;
-      margin: 0;
-      top: 1rem;
-      left: 1rem;
-      font-size: 0.8rem;
-      color: #cccccc;
+      width: 65px;
+      background-color: transparent;
+      color: #ccc;
+      border: solid #ccc;
+      border-radius: 0.6rem;
 
       .material-symbols-outlined {
+        width: fit-content;
         font-size: 0.9rem;
+        margin: 0;
         margin-right: 0.2rem;
       }
     }
 
-    iframe {
-      visibility: hidden;
+    .copyright {
+      opacity: 0;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      width: 150px;
+      height: 1rem;
+      font-size: 0.8rem;
+      color: #cccccc;
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0px 10px;
+      transition: 1s;
+    }
+
+    .cr_txt {
+      animation: flow_text 15s linear infinite;
+    }
+
+    @keyframes flow_text {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(-130px);
+      }
+    }
+
+    #player {
+      display: none;
     }
   }
 
