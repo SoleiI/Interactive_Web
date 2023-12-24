@@ -18,6 +18,9 @@ window.onload = () => {
   isMobile = checkMobile();
   isIos = checkIos();
   const check = typeof DeviceOrientationEvent.requestPermission === 'function';
+  if (isIos && check) {
+    window.DeviceOrientationEvent.requestPermission().catch(console.error());
+  }
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -33,13 +36,14 @@ window.onload = () => {
         if (!isMobile) handleMouseMove();
         else {
           /* Mobile : deviceorientation */
-          if (isIos && check) {
-            window.DeviceOrientationEvent.requestPermission()
-              .then((state) => {
-                if (state === 'granted') handleDeviceOrientation();
-              })
-              .catch(alert('권한을 허용해주세요.'));
-          } else handleDeviceOrientation();
+          // if (isIos && check) {
+          //   window.DeviceOrientationEvent.requestPermission()
+          //     .then((state) => {
+          //       if (state === 'granted') handleDeviceOrientation();
+          //     })
+          //     .catch(alert('권한을 허용해주세요.'));
+          // } else
+          handleDeviceOrientation();
         }
       }, 10000);
     }
@@ -111,10 +115,14 @@ const handleMouseMove = () => {
 };
 
 const handleDeviceOrientation = () => {
-  window.addEventListener('deviceorientation', (e) => {
-    x = e.gamma;
-    y = e.beta;
-  });
+  window.addEventListener(
+    'deviceorientation',
+    (e) => {
+      x = e.gamma;
+      y = e.beta;
+    },
+    true
+  );
   loop();
 };
 
