@@ -1,4 +1,7 @@
+const form = document.querySelector('form');
 const card = document.querySelector('section');
+const front = document.querySelector('.front');
+const frontImgs = front.querySelectorAll('div');
 const txtmsg = document.querySelector('.txtmsg');
 const txts = txtmsg.querySelectorAll('span');
 let x = 0,
@@ -13,29 +16,73 @@ window.onload = () => {
   isMobile = checkMobile();
   isIos = checkIos();
 
-  openCard();
-  setTimeout(() => {
-    writeMessage();
-    /* PC : mousemove */
-    if (!isMobile) handleMouseMove();
-    else {
-      /* Mobile : deviceorientation */
-      if (isIos)
-        DeviceOrientationEvent.requestPermission()
-          .then(() => handleDeviceOrientation())
-          .catch(console.error);
-      else handleDeviceOrientation();
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nameTag = txtmsg.querySelector('.name');
+    const name = e.target[0].form[0].value;
+    if (name) {
+      nameTag.innerHTML = `${name}님,`;
+      openCard();
+
+      setTimeout(() => {
+        writeMessage();
+        /* PC : mousemove */
+        if (!isMobile) handleMouseMove();
+        else {
+          /* Mobile : deviceorientation */
+          if (isIos)
+            DeviceOrientationEvent.requestPermission()
+              .then(() => handleDeviceOrientation())
+              .catch(console.error);
+          else handleDeviceOrientation();
+        }
+      }, 10000);
     }
-  }, 1000);
+  });
 };
 
+/* 카드 펼치는 애니메이션 */
 const openCard = () => {
-  card.style.visibility = 'visible';
+  gsap.to('form', {
+    rotationX: -90,
+    y: -20,
+    duration: 2,
+    ease: Power2.easeOut,
+  });
+  gsap.to('form', { autoAlpha: 0, duration: 1, delay: 2 });
+  gsap.to('section', { autoAlpha: 1, duration: 1, delay: 2 });
+  gsap.to('.front', {
+    rotationX: -30,
+    duration: 4,
+    delay: 2,
+    ease: Power1.easeIn,
+  });
+  gsap.to('.back', {
+    rotationX: 60,
+    duration: 4,
+    delay: 2,
+    ease: Power1.easeIn,
+  });
+  /* 입체로 만들기 */
+  frontImgs.forEach((item) => {
+    gsap.from(item, {
+      z: 0,
+      ease: Power2.ease,
+      duration: 3,
+      delay: 6.5,
+    });
+  });
 };
 
+/**
+ * TODO
+ * bgm 버튼 구현 + 깜빡거리기 효과
+ * bgm 텍스트 슬라이드 효과
+ */
+
+/* 텍스트 애니메이션 */
 const writeMessage = () => {
   txts.forEach((txt, i) => {
-    console.log(txt);
     gsap.to(txt, { autoAlpha: 1, duration: 3, delay: i * 1.5 });
   });
   gsap.to('.txtmsg', { autoAlpha: 0, delay: 5.5 });
