@@ -101,9 +101,6 @@ body header .bgm_btn .material-symbols-outlined {
   margin: 0;
   margin-right: 0.2rem;
 }
-body header .bgm_btn .bgm_txt {
-  margin-top: 0.1rem;
-}
 body header .copyright {
   opacity: 0;
   flex-shrink: 0;
